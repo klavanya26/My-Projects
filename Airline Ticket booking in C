@@ -1,0 +1,94 @@
+#include <stdio.h>
+
+void option1()
+{
+    printf("\n1. Flight 1000 \n2. Flight 1001\n");
+}
+
+void option2()
+{
+    printf("\n1. Flight 1002 \n2. Flight 1003\n");
+}
+
+int main()
+{
+    char user[50], pw[50];
+    int trip, date, choice, choice2;
+
+    printf("\nEnter username: ");
+    scanf("%s", user);
+
+    printf("\nEnter password: ");
+    scanf("%s", pw);
+
+    char adminu[] = "admin";
+    char adminpw[] = "password";
+
+    if (strcmp(user, adminu)==0 && strcmp(pw, adminpw)==0)
+    {
+        printf("\nWelcome");
+
+        printf("\nChoose if one way trip or roundtrip: ");
+        scanf("%d", &trip);
+
+        printf("\nDate: ");
+        scanf("%d", &date);
+
+        switch (trip)
+        {
+
+        case 1: 
+        {
+            if (date==1)
+            {
+                printf("\nAugust 10, 2017\n");
+                option1();
+            }
+            else if (date==2)
+            {
+                printf("\nAugust 11, 2017\n");
+                option2();
+            }
+            else
+            {
+                printf("\nInvalid date\n");
+            }
+            break;
+        }
+
+        case 2: 
+        {
+            printf("\nChoose the first flight: ");
+            scanf("%d", &choice);
+            printf("\nChoose the second flight: ");
+            scanf("%d", &choice2);
+
+            if (date==1)
+            {
+                printf("\nAugust 10, 2017\n");
+                option1();
+            }
+            else if (date==2)
+            {
+                printf("\nAugust 11, 2017\n");
+                option2();
+            }
+            else
+            {
+                printf("\nInvalid date\n");
+            }
+            break;
+        }
+
+        default:
+            printf("\nInvalid choice\n");
+            break;
+        }
+    }
+    else
+    {
+        printf("\nInvalid username or password\n");
+    }
+
+    return 0;
+}
