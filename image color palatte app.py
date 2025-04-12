@@ -61,9 +61,6 @@ def upload():
         return render_template('result.html', colors=colors, image_path=image_url)
 
     return render_template('upload.html')
-
 # Run the App
 if __name__ == '__main__':
     app.run(debug=True)
-
-
